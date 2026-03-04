@@ -278,31 +278,31 @@ Dynamic expansion handled manually via `append()`.
 
 ---
 
-## Object-Oriented Concepts Used
+## Programming Concepts Used
 
-### Encapsulation
-
-Employee attributes bundled inside `Employee` class.
-
-### Abstraction
-
-Payroll computation isolated into dedicated methods.
-
-### Modularity
-
-Separate methods for:
-
-* File loading
-* Hour computation
-* Deduction logic
+### Procedural Design
+Program flow is structured using methods to handle specific tasks:
+* Employee data loading
+* Attendance processing
+* Payroll computation
+* Deduction calculation
 * Menu handling
 
-### Separation of Concerns
+### Modularization
+Code is divided into reusable, focused methods to:
+* Simplify debugging
+* Improve readability
+* Enable stepwise testing
 
-* Data ingestion
-* Processing logic
-* Output formatting
-* Deduction computation
+### Data Handling
+* Employee and attendance records stored in arrays and ArrayLists
+* Dynamic indexing for attendance per month and cutoff
+* Structured CSV parsing for input validation
+
+### Input/Output Separation
+* User input handled through console prompts
+* Payroll summaries displayed in a clear, tabular format
+* File operations isolated from computation logic
 
 ---
 
@@ -389,13 +389,12 @@ Features Demonstrated:
   - Employee number
   - Name
   - Birthday
-* Deterministic calculation of weekly hours worked
-* Computation of gross weekly salary based on hours worked
-* Application of basic, uniform deductions to produce net weekly salary
+* Deterministic calculation of semi-monthly hours worked
+* Computation of gross semi-monthly salary based on hours worked
+* Application of government deductions to produce semi-monthly salary
 * Simple, modular procedural code for clear data flow and calculations
 
 Overview:
-
 The system provides a functional foundation for Phase 1, fulfilling all initial requirements without the use of object-oriented programming, advanced features, or integrations.
 
 ---
