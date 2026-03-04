@@ -383,7 +383,7 @@ Manual test cases executed for:
 
 The MotorPH Payroll System implements a basic, computation-focused payroll program in accordance with Phase 1 academic requirements.
 
-## Features Demonstrated
+Features Demonstrated
 
 * Accurate presentation of employee information:
   - Employee number
@@ -394,7 +394,7 @@ The MotorPH Payroll System implements a basic, computation-focused payroll progr
 * Application of basic, uniform deductions to produce net weekly salary
 * Simple, modular procedural code for clear data flow and calculations
 
-## Overview
+Overview
 
 The system provides a functional foundation for Phase 1, fulfilling all initial requirements without the use of object-oriented programming, advanced features, or integrations.
 ---
