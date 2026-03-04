@@ -46,6 +46,7 @@ The system performs the following core functions:
 
 * Loads employee master data
 * Loads attendance records
+* Displays employee information (employee number, name and birthday)
 * Computes total hours worked per payroll cutoff
 * Calculates gross pay
 * Applies statutory deductions
