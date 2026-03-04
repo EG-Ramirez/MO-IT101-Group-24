@@ -381,18 +381,22 @@ Manual test cases executed for:
 
 ## Conclusion
 
-The MotorPH Payroll System successfully implements a structured, modular, and computation-driven payroll engine aligned with Phase 1 academic requirements.
+The MotorPH Payroll System implements a basic, computation-focused payroll program in accordance with Phase 1 academic requirements.
 
-The implementation demonstrates:
+## Features Demonstrated
 
-* Proper file handling
-* Deterministic salary computation
-* Structured data modeling
-* Application of object-oriented principles
-* Clean separation of processing logic
+* Accurate presentation of employee information:
+  - Employee number
+  - Name
+  - Birthday
+* Deterministic calculation of weekly hours worked
+* Computation of gross weekly salary based on hours worked
+* Application of basic, uniform deductions to produce net weekly salary
+* Simple, modular procedural code for clear data flow and calculations
 
-The system serves as a stable architectural foundation for future expansion phases.
+## Overview
 
+The system provides a functional foundation for Phase 1, fulfilling all initial requirements without the use of object-oriented programming, advanced features, or integrations.
 ---
 
 ## Academic Integrity Statement
