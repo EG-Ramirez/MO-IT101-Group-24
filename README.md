@@ -1,0 +1,417 @@
+# MotorPH Payroll System
+
+### Phase 1 – Computer Programming 1 Final Project
+
+---
+
+## Course Information
+
+| Course    | Computer Programming 1 |
+| --------- | ---------------------- |
+| Professor | Aldrin John Tamayo      |
+| Section   | H1101                  |
+| Group     | 24                     |
+
+---
+
+## Academic Context Statement
+
+This README.md is submitted as part of the milestone requirement for **Computer Programming 1** under **Professor Aldrin John Tamayo**.
+
+It documents the full implementation, structure, and technical design of the MotorPH Payroll System (Phase 1) in alignment with the approved Project Plan Sheet and Software Requirements Specification.
+
+This repository serves as the official academic submission artifact for Group 24.
+
+---
+
+## Group Information
+
+**Section:** H1101
+**Group Number:** 24
+
+**Members:**
+
+* Carreon, Rey Lorenz
+* Ramirez, Enzo Gabriel
+* Secong, Cklein Sinn Onel
+* Tabor-Abueg, Keren Jemimah
+
+---
+
+## Project Overview
+
+The MotorPH Payroll System is a console-based Java application designed to automate payroll computation using structured employee and attendance records stored in CSV files.
+
+The system performs the following core functions:
+
+* Loads employee master data
+* Loads attendance records
+* Computes total hours worked per payroll cutoff
+* Calculates gross pay
+* Applies statutory deductions
+* Computes net pay
+* Displays structured payroll summaries
+
+The implementation is deterministic, computation-focused, and modular, aligned with Phase 1 constraints.
+
+---
+
+## Problem Statement
+
+Manual payroll computation introduces:
+
+* Calculation errors
+* Inconsistent deduction application
+* Inefficient record tracking
+* Poor traceability
+
+MotorPH requires a basic internal payroll system that:
+
+* Displays employee information
+* Computes salary based on hours worked
+* Applies uniform deduction logic
+* Produces accurate payroll summaries
+
+Phase 1 limits scope strictly to payroll computation and structured display.
+
+---
+
+## Objectives
+
+1. Implement structured employee data ingestion.
+2. Implement attendance-based hour computation.
+3. Compute payroll per cutoff period.
+4. Apply statutory deduction formulas.
+5. Maintain modular, object-oriented design.
+6. Ensure deterministic and repeatable output.
+
+---
+
+## System Features
+
+### 1. Authentication Layer
+
+* Role-based login:
+
+  * `payroll_staff`
+  * `employee`
+* Shared password validation
+* Access-based menu routing
+
+### 2. Employee Data Management
+
+* Load employee data from CSV
+* Store in memory as `Employee` objects
+* Display employee identification details
+
+### 3. Attendance Processing
+
+* Load attendance records from CSV
+* Map records to employees
+* Store attendance using a structured 3D array
+
+### 4. Payroll Computation
+
+* Hours worked calculation
+* Grace period logic
+* Lunch break deduction
+* Cutoff grouping (1–15, 16–30/31)
+* Monthly payroll summary (June–December)
+
+### 5. Deduction Modules
+
+* SSS computation (tier-based)
+* PhilHealth computation
+* Pag-IBIG computation
+* Income tax computation
+
+---
+
+## System Architecture
+
+### High-Level Architecture
+
+```
+User (Console Input)
+        ↓
+Authentication Layer
+        ↓
+Menu Controller
+        ↓
+Payroll Processing Engine
+        ↓
+Deduction Modules
+        ↓
+Formatted Output
+```
+
+---
+
+### Structural Breakdown
+
+| Component         | Responsibility                     |
+| ----------------- | ---------------------------------- |
+| `PayrollSystem`   | Main controller and execution flow |
+| `Employee`        | Data model for employee records    |
+| CSV Loaders       | Data ingestion from files          |
+| Payroll Processor | Salary and deduction computation   |
+| Deduction Methods | Individual statutory calculations  |
+
+---
+
+### Core Class and Responsibilities
+
+#### `PayrollSystem`
+
+* Entry point
+* Authentication control
+* Menu routing
+* Payroll orchestration
+
+#### `Employee`
+
+Encapsulates:
+
+* Employee number
+* Name
+* Birthday
+* Hourly rate
+* Attendance records (3D array)
+
+---
+
+## Technology Stack
+
+| Layer         | Technology                 |
+| ------------- | -------------------------- |
+| Language      | Java                       |
+| Data Storage  | CSV Files                  |
+| Interface     | Console-based              |
+| Collections   | ArrayList                  |
+| File Handling | BufferedReader, FileReader |
+
+---
+
+## Installation Instructions
+
+1. Install Java JDK (version 8 or above).
+2. Clone the repository.
+3. Ensure the following files exist in the project root:
+
+   * `employees_record.csv`
+   * `attendance_record.csv`
+4. Compile the program.
+
+---
+
+## How to Run the Program
+
+```
+javac PayrollSystem.java
+java PayrollSystem
+```
+
+Login credentials:
+
+| Username      | Password |
+| ------------- | -------- |
+| payroll_staff | 12345    |
+| employee      | 12345    |
+
+---
+
+## Sample Program Flow
+
+1. System loads employee data.
+2. System loads attendance records.
+3. User logs in.
+4. User selects menu option.
+5. Payroll processing executes.
+6. Structured payroll summary is displayed.
+
+---
+
+## Code Structure Breakdown
+
+```
+PayrollSystem.java
+│
+├── Employee (static inner class)
+├── loadEmployeesFromCSV()
+├── loadAttendanceFromCSV()
+├── processPayroll()
+├── computeHoursWorked()
+├── computeSSS()
+├── computePhilHealth()
+├── computePagibig()
+├── computeIncomeTax()
+├── employeeMenu()
+└── payrollMenu()
+```
+
+---
+
+## Data Handling Explanation
+
+### Employee Data
+
+* Loaded from CSV
+* Stored in dynamic `ArrayList`
+* Converted to fixed array after ingestion
+
+### Attendance Data
+
+3D Structure:
+
+```
+attendanceIn[month][cutoff][entries]
+attendanceOut[month][cutoff][entries]
+```
+
+Dimensions:
+
+1. Month index (1–12)
+2. Cutoff index (0 = 1–15, 1 = 16–end)
+3. Dynamic time entries
+
+Dynamic expansion handled manually via `append()`.
+
+---
+
+## Object-Oriented Concepts Used
+
+### Encapsulation
+
+Employee attributes bundled inside `Employee` class.
+
+### Abstraction
+
+Payroll computation isolated into dedicated methods.
+
+### Modularity
+
+Separate methods for:
+
+* File loading
+* Hour computation
+* Deduction logic
+* Menu handling
+
+### Separation of Concerns
+
+* Data ingestion
+* Processing logic
+* Output formatting
+* Deduction computation
+
+---
+
+## Exception Handling Strategy
+
+* Try-with-resources for file operations
+* IOException catch blocks
+* Defensive null checks for attendance records
+* Protection against negative time calculations
+
+---
+
+## Input Validation Strategy
+
+* Credential validation
+* Employee number existence checks
+* Null attendance protection
+* Negative hours protection
+* Time window enforcement (8:00 AM – 5:00 PM)
+
+---
+
+## Testing Strategy
+
+Manual test cases executed for:
+
+1. Valid and invalid login scenarios
+2. Existing and non-existing employee numbers
+3. Edge cases:
+
+   * Early login
+   * Late logout
+   * Zero attendance
+4. Deduction bracket validation
+5. Batch payroll processing
+
+---
+
+## Limitations
+
+* Password is hardcoded
+* No encryption
+* Console-only interface
+* Limited to CSV file format
+* No persistent database
+* Fixed payroll window (June–December)
+* No overtime handling
+* No holiday or leave computation
+
+---
+
+## Future Improvements
+
+1. Replace CSV with database integration.
+2. Implement secure authentication.
+3. Add overtime rules.
+4. Implement payslip export feature.
+5. Add GUI interface.
+6. Implement year parameterization.
+7. Refactor into multi-class architecture.
+8. Add automated unit testing.
+
+---
+
+## Repository Structure
+
+```
+/root
+│
+├── PayrollSystem.java
+├── employees_record.csv
+├── attendance_record.csv
+└── README.md
+```
+
+---
+
+## Screenshots
+
+> Screenshots of:
+>
+> * Login Interface
+> * Employee Portal
+> * Payroll Staff Portal
+> * Sample Payroll Summary
+>   should be inserted here before final submission.
+
+---
+
+## Conclusion
+
+The MotorPH Payroll System successfully implements a structured, modular, and computation-driven payroll engine aligned with Phase 1 academic requirements.
+
+The implementation demonstrates:
+
+* Proper file handling
+* Deterministic salary computation
+* Structured data modeling
+* Application of object-oriented principles
+* Clean separation of processing logic
+
+The system serves as a stable architectural foundation for future expansion phases.
+
+---
+
+## Academic Integrity Statement
+
+This project is an original work submitted by Group 24 for Computer Programming 1.
+
+All members contributed according to the approved Project Plan Sheet.
+
+The implementation adheres strictly to the defined scope of Phase 1 and reflects independent academic effort in compliance with institutional integrity policies.
