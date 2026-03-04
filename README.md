@@ -377,19 +377,6 @@ Manual test cases executed for:
 ├── attendance_record.csv
 └── README.md
 ```
-
----
-
-## Screenshots
-
-> Screenshots of:
->
-> * Login Interface
-> * Employee Portal
-> * Payroll Staff Portal
-> * Sample Payroll Summary
->   should be inserted here before final submission.
-
 ---
 
 ## Conclusion
