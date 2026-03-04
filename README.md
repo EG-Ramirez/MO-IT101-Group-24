@@ -16,11 +16,11 @@
 
 ## Academic Context Statement
 
-This README.md is submitted as part of the milestone requirement for **Computer Programming 1** under **Professor Aldrin John Tamayo**.
+This document is submitted as part of the milestone requirement for Computer Programming 1 under Professor Aldrin John Tamayo.
 
-It documents the full implementation, structure, and technical design of the MotorPH Payroll System (Phase 1) in alignment with the approved Project Plan Sheet and Software Requirements Specification.
+It presents the complete implementation, structure, and technical documentation of the MotorPH Payroll System (Phase 1), developed in accordance with the approved Project Plan Sheet and defined Phase 1 MotorPh requirements.
 
-This repository serves as the official academic submission artifact for Group 24.
+This repository serves as the official academic submission of Group 24 for the specified milestone.
 
 ---
 
