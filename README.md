@@ -31,10 +31,26 @@ This repository serves as the official academic submission of Group 24 for the s
 
 **Members:**
 
-* Carreon, Rey Lorenz
-* Ramirez, Enzo Gabriel
-* Secong, Cklein Sinn Onel
-* Tabor-Abueg, Keren Jemimah
+* Carreon, Rey Lorenz:
+
+Contributed to the development of the authentication and payroll summary workflow. Assisted in comparing both implementations of Task 10, consolidating the logic, and integrating the final version into the program. Helped implement the login flow where the user enters the username, password, and employee ID to directly generate the employee payroll summary.
+
+* Ramirez, Enzo Gabriel:
+
+Led the overall development of the MotorPH Payroll System. Responsible for the core program architecture, payroll computation logic, CSV data handling, attendance processing, deduction calculations, and system flow integration. Consolidated group code contributions, resolved implementation issues, and completed the final technical documentation including the full README and repository structure.
+* Secong, Cklein Sinn Onel:
+
+`-`
+
+* Tabor-Abueg, Keren Jemimah:
+
+`-` 
+
+---
+
+## Project Planning Document
+
+Project Plan Sheet: [Click Here to View](https://docs.google.com/document/d/18HEJurqGZna3ZPcoLd6GbF_-5D9kD_OX47OSTbpq3Cc/edit?usp=sharing)
 
 ---
 
@@ -176,8 +192,6 @@ Encapsulates:
 * Employee number
 * Name
 * Birthday
-* Hourly rate
-* Attendance records (3D array)
 
 ---
 
@@ -403,7 +417,5 @@ The system provides a functional foundation for Phase 1, fulfilling all initial 
 ## Academic Integrity Statement
 
 This project is an original work submitted by Group 24 for Computer Programming 1.
-
-All members contributed according to the approved Project Plan Sheet.
 
 The implementation adheres strictly to the defined scope of Phase 1 and reflects independent academic effort in compliance with institutional integrity policies.
