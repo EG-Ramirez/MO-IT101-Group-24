@@ -1,6 +1,6 @@
 # MotorPH Payroll System
 
-### Phase 1 – Computer Programming 1 Final Project
+### Phase 1 – Computer Programming 1 Milestone
 
 ---
 
@@ -192,6 +192,8 @@ Encapsulates:
 * Employee number
 * Name
 * Birthday
+* Hourly Rate
+* Attendance records (3D array)
 
 ---
 
@@ -416,6 +418,6 @@ The system provides a functional foundation for Phase 1, fulfilling all initial 
 
 ## Academic Integrity Statement
 
-This project is an original work submitted by Group 24 for Computer Programming 1.
+This project is an original work submitted by Group 24 from the section of H1101 for the course of Computer Programming 1.
 
 The implementation adheres strictly to the defined scope of Phase 1 and reflects independent academic effort in compliance with institutional integrity policies.
