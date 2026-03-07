@@ -191,7 +191,7 @@ System.out.println("Payroll Summary for: " + monthNames[m]);
 System.out.println("[ First Cutoff: 1 - 15 ]");
 System.out.println("Hours Worked: " + firstHours);
 System.out.println("Gross Pay: " + firstGross);
-System.out.println("Net Pay: " + (firstGross - totalDeductions));
+System.out.println("Net Pay: " + firstGross);
 
 System.out.println("[ Second Cutoff: 16 - 30 ]");
 System.out.println("Hours Worked: " + secondHours);
