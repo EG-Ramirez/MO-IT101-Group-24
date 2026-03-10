@@ -232,8 +232,6 @@ System.out.println("========================================");
             double decimalIn = convertToHours(in);
             double decimalOut = convertToHours(out);
             double daily = decimalOut - decimalIn;
-            // - 1 hour Lunch Deduction if Work Exceeds 4 Hours
-            if (daily > 4.0) daily -= 1.0;
             // (-) Negative Time Proctetion 
             if (decimalOut < decimalIn || daily < 0) daily = 0;
             hoursWorked += daily;
