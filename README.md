@@ -40,11 +40,11 @@ Contributed to the development of the authentication and payroll summary workflo
 Led the overall development of the MotorPH Payroll System. Responsible for the core program architecture, payroll computation logic, CSV data handling, attendance processing, deduction calculations, and system flow integration. Consolidated group code contributions, resolved implementation issues, and completed the final technical documentation including the full README and repository structure.
 * Secong, Cklein Sinn Onel:
 
-`-`
+Designed the system wireframes and visual representations to guide the structure and layout of the MotorPH Payroll System interface. Established the formatting for employee information display and structured the payroll output layout to ensure clear and consistent presentation of payroll data within the program.
 
 * Tabor-Abueg, Keren Jemimah:
 
-`-` 
+Defined the project scope for Phase 1, including the key assumptions and operational constraints guiding the system design. Developed the primary use cases and user flow to outline how users interact with the system, and established the overall program flow to ensure alignment between functional requirements and implementation. 
 
 ---
 
