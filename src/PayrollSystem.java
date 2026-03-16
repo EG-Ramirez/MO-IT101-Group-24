@@ -126,8 +126,8 @@ public class PayrollSystem {
                 */
                 String empNo = parts[0].trim();
                 String date = parts[3].trim(); // Format: MM/DD/YYYY
-                double timeIn = Double.parseDouble(parts[4].trim());
-                double timeOut = Double.parseDouble(parts[5].trim());
+                double timeIn = Double.parseDouble(parts[4].trim().replace(":", "."));
+                double timeOut = Double.parseDouble(parts[5].trim().replace(":", "."));
 
                 Employee emp = findEmployee(empNo);
                 // Defensive Check for Orphan Attendance Records
