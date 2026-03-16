@@ -68,32 +68,32 @@ public class PayrollSystem {
     > Convert to Employee objects
     > Store in memory
     */
-    static void loadEmployeesFromCSV(String employees_record) {
+    static void loadEmployeesFromCSV(String mph_employees_record) {
     ArrayList<Employee> list = new ArrayList<>();
 
     // try-with-resources Ensures Automatic File Closure Preventing Resource Leaks
-    try (BufferedReader br = new BufferedReader(new FileReader(employees_record))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(mph_employees_record))) {
         String line;
         br.readLine(); 
 
         while ((line = br.readLine()) != null) {
             if (line.trim().isEmpty()) continue;
 
-            String[] parts = line.split(",");
+            String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
 
             /*
              > Data contract assumption:
-             > Column 0: employeeNum
-             > Column 1: firstName
-             > Column 2: lastName
-             > Column 3: birthday
-             > Column 4: hourlyRate
+             > Column 0: Employee Number
+             > Column 1: Last Name
+             > Column 2: First Name
+             > Column 3: Birthday
+             > Column 18: Hourly Rate
              */
             String empNo = parts[0].trim();
-            String firstName = parts[1].trim();
-            String lastName = parts[2].trim();
+            String lastName = parts[1].trim();
+            String firstName = parts[2].trim();
             String birthday = parts[3].trim();
-            double rate = Double.parseDouble(parts[4].trim());
+            double rate = Double.parseDouble(parts[18].trim());
 
             Employee emp = new Employee(empNo, firstName + " " + lastName, birthday, rate);
             
