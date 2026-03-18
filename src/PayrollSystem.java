@@ -65,7 +65,7 @@ public class PayrollSystem {
     /*
     * CSV Employees Loader Responsibilities 
     > Parse structured employee data
-    > Convert to Employee objects
+    > Convert to Employee objects via parseEmployee()
     > Store in memory
     */
     static void loadEmployeesFromCSV(String mph_employees_record) {
