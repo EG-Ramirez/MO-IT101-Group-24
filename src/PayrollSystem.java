@@ -72,40 +72,64 @@ public class PayrollSystem {
     ArrayList<Employee> list = new ArrayList<>();
 
     // try-with-resources Ensures Automatic File Closure Preventing Resource Leaks
-    try (BufferedReader br = new BufferedReader(new FileReader(mph_employees_record))) {
-        String line;
-        br.readLine(); 
+        try (BufferedReader br = new BufferedReader(new FileReader(mph_employees_record))) {
 
-        while ((line = br.readLine()) != null) {
-            if (line.trim().isEmpty()) continue;
+            // Read header row to dynamically locate the "Hourly Rate" column index
+            String headerLine = br.readLine();
+            int rateColumnIndex = findColumnIndex(headerLine, "Hourly Rate");
 
-            String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.trim().isEmpty()) continue;
 
-            /*
-             > Data contract assumption:
-             > Column 0: Employee Number
-             > Column 1: Last Name
-             > Column 2: First Name
-             > Column 3: Birthday
-             > Column 18: Hourly Rate
-             */
-            String empNo = parts[0].trim();
-            String lastName = parts[1].trim();
-            String firstName = parts[2].trim();
-            String birthday = parts[3].trim();
-            double rate = Double.parseDouble(parts[18].trim());
+                // Delegate CSV line parsing and object construction to parseEmployee()
+                Employee emp = parseEmployee(line, rateColumnIndex);
+                list.add(emp);
+            }
 
-            Employee emp = new Employee(empNo, firstName + " " + lastName, birthday, rate);
-            
-            list.add(emp);
+        } catch (IOException e) {
+            System.out.println("Error reading employee file: " + e.getMessage());
         }
 
-    } catch (IOException e) {
-        System.out.println("Error reading employee file: " + e.getMessage());
+        // Converts Dynamic Array List to a Fixed Sized Array to Stabilize Data Structure Post-Loading
+        employees = list.toArray(new Employee[0]);
     }
 
-    // Converts Dynamic Array List to a Fixed Sized Array to Stabalize Data Structure Post-Loading
-    employees = list.toArray(new Employee[0]); 
+    /*
+    Column Index Resolver: Scans the CSV Header Row for a Named Column
+    > Returns the matching index if found
+    > Falls back to default index 18 if the column name is not matched
+    */
+    static int findColumnIndex(String headerLine, String columnName) {
+        String[] headers = headerLine.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+        for (int i = 0; i < headers.length; i++) {
+            if (headers[i].trim().equalsIgnoreCase(columnName)) {
+                return i;
+            }
+        }
+        return 18; // Default fallback if column header is not found
+    }
+
+    /*
+    Employee Object Factory: Parses a Single CSV Line and Constructs an Employee
+    > Accepts the rate column index dynamically to avoid hardcoded positions
+    > Data contract assumption:
+    >   Column 0: Employee Number
+    >   Column 1: Last Name
+    >   Column 2: First Name
+    >   Column 3: Birthday
+    >   Column rateColumnIndex: Hourly Rate
+    */
+    static Employee parseEmployee(String line, int rateColumnIndex) {
+        String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+
+        String empNo = parts[0].trim();
+        String lastName = parts[1].trim();
+        String firstName = parts[2].trim();
+        String birthday = parts[3].trim();
+        double rate = Double.parseDouble(parts[rateColumnIndex].trim().replace(",", ""));
+
+        return new Employee(empNo, firstName + " " + lastName, birthday, rate); 
 }
 
     // CSV Attendance Loader: Requires Employee Numbers to Match those in employees_record.csv
@@ -126,6 +150,7 @@ public class PayrollSystem {
                 */
                 String empNo = parts[0].trim();
                 String date = parts[3].trim(); // Format: MM/DD/YYYY
+                // Note: BigDecimal would provide higher arithmetic precision here
                 double timeIn = Double.parseDouble(parts[4].trim().replace(":", "."));
                 double timeOut = Double.parseDouble(parts[5].trim().replace(":", "."));
 
@@ -304,7 +329,7 @@ System.out.println("========================================");
         }
     }
 
-    // SSS Monthly Deduction Calculation
+    // SSS Monthly Deduction Table as of 2024
     static double computeSSS(double monthlyGross) {
         double monthlyContribution = 0;
         
