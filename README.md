@@ -359,6 +359,12 @@ Manual test cases executed for:
 
 ---
 
+## Quality Assurance Test Case
+
+Quality Assurance Test Case Document: [Click Here to View](https://docs.google.com/spreadsheets/d/1VSY-mk2aJ-P0g1CcugyUndu5Y4PM-Ra-eGnyEJJqwNg/edit?usp=sharing)
+
+---
+
 ## Limitations
 
 * Password is hardcoded
@@ -395,11 +401,6 @@ Manual test cases executed for:
 ├── attendance_record.csv
 └── README.md
 ```
----
-
-## Quality Assurance Test Case
-
-Quality Assurance Test Case Document: [Click Here to View](https://docs.google.com/spreadsheets/d/1VSY-mk2aJ-P0g1CcugyUndu5Y4PM-Ra-eGnyEJJqwNg/edit?usp=sharing)
 
 ---
 
