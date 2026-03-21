@@ -49,9 +49,9 @@ Defined the project scope for Phase 1, including the key assumptions and operati
 
 ---
 
-## Project Planning Document
+## Project Plan
 
-Project Plan Sheet: [Click Here to View](https://docs.google.com/document/d/18HEJurqGZna3ZPcoLd6GbF_-5D9kD_OX47OSTbpq3Cc/edit?usp=sharing)
+Project Plan Document: [Click Here to View](https://docs.google.com/document/d/18HEJurqGZna3ZPcoLd6GbF_-5D9kD_OX47OSTbpq3Cc/edit?usp=sharing)
 
 ---
 
