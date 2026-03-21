@@ -33,11 +33,12 @@ This repository serves as the official academic submission of Group 24 for the s
 
 * Carreon, Rey Lorenz:
 
-Contributed to the development of the authentication and payroll summary workflow. Assisted in comparing both implementations of Task 10, consolidating the logic, and integrating the final version into the program. Helped implement the login flow where the user enters the username, password, and employee ID to directly generate the employee payroll summary.
+Contributed to the implementation and refinement of the authentication and payroll summary workflow. Engineered the login process requiring username, password, and employee ID to trigger direct payroll summary generation. Led the drafting and application of code modifications based on IT coach and QA feedback. Collaborated in evaluating multiple implementations, consolidating the most effective logic, and integrating the finalized version into the system.
 
 * Ramirez, Enzo Gabriel:
 
-Led the overall development of the MotorPH Payroll System. Responsible for the core program architecture, payroll computation logic, CSV data handling, attendance processing, deduction calculations, and system flow integration. Consolidated group code contributions, resolved implementation issues, and completed the final technical documentation including the full README and repository structure.
+Led the end-to-end development of the MotorPH Payroll System, defining the overall architecture and integrating all core components. Engineered payroll computation logic, CSV data parsing, attendance processing, and deduction calculations. Managed system flow integration, resolved implementation issues, and ensured functional consistency across modules. Performed runtime debugging and error resolution and finalized all project deliverables, including technical documentation and repository structure. Co-reviewed IT coach and QA feedback to guide system improvements.
+
 * Secong, Cklein Sinn Onel:
 
 Designed the system wireframes and visual representations to guide the structure and layout of the MotorPH Payroll System interface. Established the formatting for employee information display and structured the payroll output layout to ensure clear and consistent presentation of payroll data within the program.
@@ -394,6 +395,12 @@ Manual test cases executed for:
 ├── attendance_record.csv
 └── README.md
 ```
+---
+
+## Quality Assurance Test Case
+
+Quality Assurance Test Case Document: [Click Here to View](https://docs.google.com/spreadsheets/d/1VSY-mk2aJ-P0g1CcugyUndu5Y4PM-Ra-eGnyEJJqwNg/edit?usp=sharing)
+
 ---
 
 ## Conclusion
