@@ -114,11 +114,11 @@ public class PayrollSystem {
     Employee Object Factory: Parses a Single CSV Line and Constructs an Employee
     > Accepts the rate column index dynamically to avoid hardcoded positions
     > Data contract assumption:
-    >   Column 0: Employee Number
-    >   Column 1: Last Name
-    >   Column 2: First Name
-    >   Column 3: Birthday
-    >   Column rateColumnIndex: Hourly Rate
+    > Column 0: Employee Number
+    > Column 1: Last Name
+    > Column 2: First Name
+    > Column 3: Birthday
+    > Column rateColumnIndex: Hourly Rate
     */
     static Employee parseEmployee(String line, int rateColumnIndex) {
         String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
